@@ -1,0 +1,30 @@
+{
+  "name": "nodejs_prac",
+  "version": "1.0.0",
+  "description": "nodejs practice",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon --inspect index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dpthao7/nodejs_prac2.git"
+  },
+  "keywords": [
+    "nodejs"
+  ],
+  "author": "dpthao7",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dpthao7/nodejs_prac2/issues"
+  },
+  "homepage": "https://github.com/dpthao7/nodejs_prac2#readme",
+  "dependencies": {
+    "express": "^4.17.3",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
