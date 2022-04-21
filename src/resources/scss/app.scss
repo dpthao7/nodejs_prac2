@@ -1,0 +1,11 @@
+// test import từ _variable.scss
+@import 'variables';
+
+.test{
+    font-size: 1rem;
+}
+
+h1{
+    // color: red;
+    color: $red-color;
+}
