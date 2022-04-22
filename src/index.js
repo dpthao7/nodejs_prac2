@@ -13,12 +13,13 @@ const port = 3000
 app.use(express.static(path.join(__dirname,'public')));
 
 // Http logger
-app.use(morgan('combined'));
+// app.use(morgan('combined'));
 
 // Template engine
-// app.engine('handlebars', handlebars() ); // Lỗi, phải dùng code 2 dòng dưới
+// app.engine('handlebars', handlebars() ); // code F8: Lỗi, phải dùng code 2 dòng dưới
 const hbs = handlebars.create({defaultLayout: 'main'});
 app.engine('handlebars', hbs.engine);
+// app.engine('.hbs', engine({extname: '.hbs'}));
 app.set('view engine', 'handlebars');
 app.set('views',path.join(__dirname, 'resources/views'))
 
@@ -34,6 +35,16 @@ app.get('/', (req, res) => {
 app.get('/news', (req, res) => {
     // Render ra nội dung từ home.handlebars. Header, Footer là tĩnh, ko đổi, nội dung body thay đổi
     res.render('news');
+});
+
+// Tạo /search - query param
+app.get('/search', (req, res) => {
+    res.render('search');
+});
+
+app.post('/search', (req, res) => {
+    // send - gửi yêu cầu client lên server
+    res.send('');
 });
 
 app.listen(port, () => console.log(`Example all listening at http://localhost:${port}`))
