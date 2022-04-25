@@ -9,8 +9,16 @@ const app = express();
 
 const port = 3000
 
+const route = require('./routes');
+
 //Serves static files (file tĩnh trong thư mực public)
 app.use(express.static(path.join(__dirname,'public')));
+
+app.use(express.urlencoded({
+    extended: true
+}));
+app.use(express.json());
+
 
 // Http logger
 // app.use(morgan('combined'));
@@ -44,6 +52,7 @@ app.get('/search', (req, res) => {
 
 app.post('/search', (req, res) => {
     // send - gửi yêu cầu client lên server
+    console.log(req.body);
     res.send('');
 });
 
